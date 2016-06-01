@@ -1,0 +1,11 @@
+
+BL51 BANKED LINKER/LOCATER V6.22 - SN: K1RIC-50A75Z
+COPYRIGHT KEIL ELEKTRONIK GmbH 1987 - 2009
+"D:\Work Files\C Code\New Hardware\Multiple Profiles\maincode.obj",
+"D:\Work Files\C Code\New Hardware\Multiple Profiles\can.obj",
+"D:\Work Files\C Code\New Hardware\Multiple Profiles\spi.obj",
+"D:\Work Files\C Code\New Hardware\Multiple Profiles\timers.obj",
+"D:\Work Files\C Code\New Hardware\Multiple Profiles\user.obj"  TO "D:\Work Files\C Code\New Hardware\Multiple Profiles\maincodeOMF" RS(256) PL(68) PW(78) 
+
+Program Size: data=101.0 xdata=809 code=22433
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

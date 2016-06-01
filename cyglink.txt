@@ -1,0 +1,5 @@
+"D:\Work Files\C Code\New Hardware\Multiple Profiles\maincode.obj",
+"D:\Work Files\C Code\New Hardware\Multiple Profiles\can.obj",
+"D:\Work Files\C Code\New Hardware\Multiple Profiles\spi.obj",
+"D:\Work Files\C Code\New Hardware\Multiple Profiles\timers.obj",
+"D:\Work Files\C Code\New Hardware\Multiple Profiles\user.obj"  TO "D:\Work Files\C Code\New Hardware\Multiple Profiles\maincodeOMF" RS(256) PL(68) PW(78) 
