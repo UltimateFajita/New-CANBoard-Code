@@ -1106,6 +1106,7 @@ void User1()	// program select 1 - CUSW
 						OneTime[index1].cdat[2] = 0x0;
 						OneTime[index1].cdat[3] = 0x0;
 						AlterMessageByte(0,0x098,0,OneTime[index1].cdat,4,0);
+						IGN_OFF_FLG = 1;
 						break;
 					case 0x30:	// IGN_START
 						// ID 190, alter byte 0,1 
@@ -1119,6 +1120,7 @@ void User1()	// program select 1 - CUSW
 						OneTime[index1].cdat[2] = 0x0;
 						OneTime[index1].cdat[3] = 0x0;
 						AlterMessageByte(0,0x098,2,OneTime[index1].cdat,4,0);
+						IGN_OFF_FLG = 1;
 						break;
 					case 0x40:	// IGN_RUN_0
 						// ID 190, alter byte 0,1 
@@ -1132,6 +1134,7 @@ void User1()	// program select 1 - CUSW
 						OneTime[index1].cdat[2] = 0x0;
 						OneTime[index1].cdat[3] = 0x0;
 						AlterMessageByte(0,0x098,0,OneTime[index1].cdat,4,0);
+						IGN_OFF_FLG = 1;
 						break;
 					case 0x50:	// IGN_RUN_5
 					// ID 190, alter byte 0,1 
@@ -1145,6 +1148,7 @@ void User1()	// program select 1 - CUSW
 						OneTime[index1].cdat[2] = 0x0;
 						OneTime[index1].cdat[3] = 0x80;
 						AlterMessageByte(0,0x098,0,OneTime[index1].cdat,4,0);
+						IGN_OFF_FLG = 1;
 						break;
 					case 0x60:	// IGN_RUN_10
 					// ID 190, alter byte 0,1 
@@ -1158,6 +1162,7 @@ void User1()	// program select 1 - CUSW
 						OneTime[index1].cdat[2] = 0x0;
 						OneTime[index1].cdat[3] = 0xFD;
 						AlterMessageByte(0,0x098,0,OneTime[index1].cdat,4,0);
+						IGN_OFF_FLG = 1;
 						break;
 					
 					case 0x70:
@@ -2320,6 +2325,7 @@ void User2()	// program select 2, PNET
 						OneTime[index1].cdat[7] = 0x0;
 						AlterMessageByte(0,0x322,2,OneTime[index1].cdat,8,0);
 						IGN_OFF = 1;	// TURN on IGN_OFF flag
+						IGN_OFF_FLG = 0;
 						break;
 					case 0x20:	// IGN_ACC
 						// ID 190, alter byte 0,1 
@@ -2337,8 +2343,24 @@ void User2()	// program select 2, PNET
 						OneTime[index1].cdat[6] = 0x07;
 						OneTime[index1].cdat[7] = 0xD0;
 						AlterMessageByte(0,0x322,2,OneTime[index1].cdat,8,0);
+						IGN_OFF_FLG = 1;
 						break;
-					case 0x30:	// IGN_RUN_0
+
+					case 0x30:	// IGN_START
+						// ID 190, alter byte 0,1 
+						OneTime[index1].cdat[0] = 0x05;	      	//ignition run, start not active  04 = run ;02=ACC ;0D= NormalStart, key in Ign, 						
+						OneTime[index1].cdat[1] = 0x02;		  	//key in ignition
+						AlterMessageByte(0,0x122,0,OneTime[index1].cdat,2,0);
+
+						// ID 98, alter bytes 2,3  
+						OneTime[index1].cdat[0] = 0x0; 			// 0 speed			
+						OneTime[index1].cdat[1] = 0x0;
+						OneTime[index1].cdat[2] = 0x0;
+						OneTime[index1].cdat[3] = 0x0;
+						AlterMessageByte(0,0x322,2,OneTime[index1].cdat,4,0);
+						IGN_OFF_FLG = 1;
+						break;
+					case 0x40:	// IGN_RUN_0
 						// ID 190, alter byte 0,1 
 						OneTime[index1].cdat[0] = 0x04;	      	//ignition run, start not active  04 = run ;02=ACC ;0D= NormalStart, key in Ign, 						
 						OneTime[index1].cdat[1] = 0x02;		  	//key in ignition
@@ -2354,8 +2376,9 @@ void User2()	// program select 2, PNET
 						OneTime[index1].cdat[6] = 0x07;
 						OneTime[index1].cdat[7] = 0xD0;
 						AlterMessageByte(0,0x322,2,OneTime[index1].cdat,8,0);
+						IGN_OFF_FLG = 1;
 						break;
-					case 0x40:	// IGN_RUN_5
+					case 0x50:	// IGN_RUN_5
 					// ID 190, alter byte 0,1 
 						OneTime[index1].cdat[0] = 0x04;	      	//ignition run, start not active  04 = run ;02=ACC ;0D= NormalStart, key in Ign, 						
 						OneTime[index1].cdat[1] = 0x02;		  	//key in ignition
@@ -2371,8 +2394,9 @@ void User2()	// program select 2, PNET
 						OneTime[index1].cdat[6] = 0x07;
 						OneTime[index1].cdat[7] = 0xD0;
 						AlterMessageByte(0,0x322,2,OneTime[index1].cdat,8,0);
+						IGN_OFF_FLG = 1;
 						break;
-					case 0x50:	// IGN_RUN_10
+					case 0x60:	// IGN_RUN_10
 					// ID 190, alter byte 0,1 
 						OneTime[index1].cdat[0] = 0x04;	      	//ignition run, start not active  04 = run ;02=ACC ;0D= NormalStart, key in Ign, 						
 						OneTime[index1].cdat[1] = 0x02;		  	//key in ignition
@@ -2388,20 +2412,9 @@ void User2()	// program select 2, PNET
 						OneTime[index1].cdat[6] = 0x07;
 						OneTime[index1].cdat[7] = 0xD0;
 						AlterMessageByte(0,0x322,2,OneTime[index1].cdat,8,0);
+						IGN_OFF_FLG = 1;
 						break;
-					case 0x60:	// IGN_START
-						// ID 190, alter byte 0,1 
-						OneTime[index1].cdat[0] = 0x05;	      	//ignition run, start not active  04 = run ;02=ACC ;0D= NormalStart, key in Ign, 						
-						OneTime[index1].cdat[1] = 0x02;		  	//key in ignition
-						AlterMessageByte(0,0x122,0,OneTime[index1].cdat,2,0);
-
-						// ID 98, alter bytes 2,3  
-						OneTime[index1].cdat[0] = 0x0; 			// 0 speed			
-						OneTime[index1].cdat[1] = 0x0;
-						OneTime[index1].cdat[2] = 0x0;
-						OneTime[index1].cdat[3] = 0x0;
-						AlterMessageByte(0,0x322,2,OneTime[index1].cdat,4,0);
-						break;
+					
 					case 0x70:
 						break;
 					case 0x80:

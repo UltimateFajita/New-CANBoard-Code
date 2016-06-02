@@ -1,4 +1,4 @@
-C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:16:06 PAGE 1   
+C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:47:10 PAGE 1   
 
 
 C51 COMPILER V9.51, COMPILATION OF MODULE SPI
@@ -62,7 +62,7 @@ line level    source
   53   1              while (!SPIF);                                                          // wait for transaction complete
   54   1              return SPI0DAT;                                                         // return received data byte
   55   1      }
-C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:16:06 PAGE 2   
+C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:47:10 PAGE 2   
 
   56          
   57          // (dis)Enable SPI CS and SFRPAGE for CAN1
@@ -126,7 +126,7 @@ line level    source
  115                  
  116                  spiCAN(1);
  117                  i = 0xAA;                               // dummy lines added compiler was being stupid
-C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:16:06 PAGE 3   
+C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:47:10 PAGE 3   
 
  118                  spi_readwrite(MCP_READ);
  119                  spi_readwrite(address);
@@ -190,7 +190,7 @@ line level    source
  177          
  178          /*********************************************************************************************************
  179          ** Function name:           CAN1readStatus
-C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:16:06 PAGE 4   
+C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:47:10 PAGE 4   
 
  180          ** Descriptions:            read mcp2515's Status
  181          *********************************************************************************************************/
@@ -254,7 +254,7 @@ line level    source
  239   2              case (CAN_1000KBPS):
  240   2              cfg1 = 0x40;                    // SJW = 1 (2 TQ's), BRP = 0 -> .125uSec / TQ
  241   2              cfg2 = 0x89;                    // PRSEG = 1 -> PropSeg is 2 TQ's, PHSEG1 = 1 -> Phase1 is 2 TQ's 
-C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:16:06 PAGE 5   
+C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:47:10 PAGE 5   
 
  242   2              cfg3 = 2;                               // PHSEG2 = 2 -> Phase2 is 3 TQ's
  243   2              break;                                  // Bit Time is #TQ's * BRP :: 1+2+2+3 = 8 TQ's and 8*.125uSec => 1000Kbits
@@ -318,7 +318,7 @@ line level    source
  301   2              canid = (U16)(id >> 16);
  302   2              tbufdata[MCP_SIDL] = (U8) (canid & 0x03);
  303   2              tbufdata[MCP_SIDL] += (U8) ((canid & 0x1C) << 3);
-C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:16:06 PAGE 6   
+C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:47:10 PAGE 6   
 
  304   2              tbufdata[MCP_SIDL] |= MCP_TXB_EXIDE_M;
  305   2              tbufdata[MCP_SIDH] = (U8) (canid >> 5 );
@@ -382,7 +382,7 @@ line level    source
  363   1      
  364   1                                                                              /* Clear, deactivate the three  */
  365   1                                                                              /* transmit buffers             */
-C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:16:06 PAGE 7   
+C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:47:10 PAGE 7   
 
  366   1                                                                              /* TXBnCTRL -> TXBnD7           */
  367   1          a1 = MCP_TXB0CTRL;
@@ -446,7 +446,7 @@ line level    source
  424          ** Descriptions:            init can and set speed
  425          *********************************************************************************************************/
  426          U8 CAN1begin(U8 speedset)
-C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:16:06 PAGE 8   
+C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:47:10 PAGE 8   
 
  427          {
  428   1      
@@ -510,7 +510,7 @@ line level    source
  486          ** Descriptions:            read CAN1 msg into rxbuf
  487          *********************************************************************************************************/
  488          U8 CAN1read_canMsg(U8 RxBuff)
-C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:16:06 PAGE 9   
+C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:47:10 PAGE 9   
 
  489          {
  490   1              U8 i,j;
@@ -574,7 +574,7 @@ line level    source
  548   2              if ( (ctrlval & MCP_TXB_TXREQ_M) == 0 )
  549   2                      {
  550   3                  *txbuf_n = ctrlregs[i];                                   // return SIDH-address of Buffer 
-C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:16:06 PAGE 10  
+C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:47:10 PAGE 10  
 
  551   3                                                                                                          
  552   3                  return MCP2515_OK;
@@ -638,7 +638,7 @@ line level    source
  610          
  611          /*********************************************************************************************************
  612          ** Function name:           CAN1start_transmit
-C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:16:06 PAGE 11  
+C51 COMPILER V9.51   SPI                                                                   06/02/2016 08:47:10 PAGE 11  
 
  613          ** Descriptions:            start transmit
  614          *********************************************************************************************************/

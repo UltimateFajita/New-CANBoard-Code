@@ -1247,7 +1247,7 @@ void User2()	// program select 2, PNET
 	OneTime[0].cdat[5] = 0;
 	OneTime[0].cdat[6] = 0;
 	OneTime[0].cdat[7] = 0;
-	AddMessage(0,0x22D,950,8,OneTime[0].cdat);  // SWS_8 - Steering Wheel messages
+	AddMessage(0,0x22D,500,8,OneTime[0].cdat);  // SWS_8 - Steering Wheel messages
 	
 	OneTime[0].cdat[0] = 0;
 	OneTime[0].cdat[1] = 0;	
@@ -1496,64 +1496,104 @@ void User2()	// program select 2, PNET
 	// Volume Up
 	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
 	OneTime[0].cdat[1] = 0xFF;
-	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
+	OneTime[0].cdat[2] = 0;	// using OneTime structure as temp storage
 	OneTime[0].cdat[3] = 0xFF;
 	OneTime[0].cdat[4] = 0xFF;
-	OneTime[0].cdat[5] = 0;		
+	OneTime[0].cdat[5] = 0xFF;		
 	OneTime[0].cdat[6] = 0xFF;
 	OneTime[0].cdat[7] = 0xFF;
 	OneTime[1].cdat[0] = 0;		// values (ORed)
 	OneTime[1].cdat[1] = 0;
-	OneTime[1].cdat[2] = 0;
+	OneTime[1].cdat[2] = 0x01;
 	OneTime[1].cdat[3] = 0;
 	OneTime[1].cdat[4] = 0;
-	OneTime[1].cdat[5] = 0x08;
+	OneTime[1].cdat[5] = 0;
 	OneTime[1].cdat[6] = 0;
 	OneTime[1].cdat[7] = 0;
 //U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(19,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
+	SimpleButtonConfig(19,0,0x22D,OneTime[0].cdat,OneTime[1].cdat,1);
 
 	// Volume Down
 	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
 	OneTime[0].cdat[1] = 0xFF;
-	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
+	OneTime[0].cdat[2] = 0;	// using OneTime structure as temp storage
 	OneTime[0].cdat[3] = 0xFF;
 	OneTime[0].cdat[4] = 0xFF;
-	OneTime[0].cdat[5] = 0;		
+	OneTime[0].cdat[5] = 0xFF;		
 	OneTime[0].cdat[6] = 0xFF;
 	OneTime[0].cdat[7] = 0xFF;
 	OneTime[1].cdat[0] = 0;		// values (ORed)
 	OneTime[1].cdat[1] = 0;
-	OneTime[1].cdat[2] = 0;
+	OneTime[1].cdat[2] = 0x04;
 	OneTime[1].cdat[3] = 0;
 	OneTime[1].cdat[4] = 0;
-	OneTime[1].cdat[5] = 0x20;
+	OneTime[1].cdat[5] = 0;
 	OneTime[1].cdat[6] = 0;
 	OneTime[1].cdat[7] = 0;
 //U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(9,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
+	SimpleButtonConfig(9,0,0x22D,OneTime[0].cdat,OneTime[1].cdat,1);
 
 	// Mode
 	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
 	OneTime[0].cdat[1] = 0xFF;
-	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
+	OneTime[0].cdat[2] = 0;	// using OneTime structure as temp storage
 	OneTime[0].cdat[3] = 0xFF;
 	OneTime[0].cdat[4] = 0xFF;
-	OneTime[0].cdat[5] = 0;		
+	OneTime[0].cdat[5] = 0xFF;		
+	OneTime[0].cdat[6] = 0xFF;
+	OneTime[0].cdat[7] = 0xFF;
+	OneTime[1].cdat[0] = 0;		// values (ORed)
+	OneTime[1].cdat[1] = 0;
+	OneTime[1].cdat[2] = 0x10;
+	OneTime[1].cdat[3] = 0;
+	OneTime[1].cdat[4] = 0;
+	OneTime[1].cdat[5] = 0;
+	OneTime[1].cdat[6] = 0;
+	OneTime[1].cdat[7] = 0;
+//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
+	SimpleButtonConfig(18,0,0x22D,OneTime[0].cdat,OneTime[1].cdat,1);
+
+	// Preset
+	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
+	OneTime[0].cdat[1] = 0xFF;
+	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
+	OneTime[0].cdat[3] = 0xFF;
+	OneTime[0].cdat[4] = 0;
+	OneTime[0].cdat[5] = 0xFF;		
 	OneTime[0].cdat[6] = 0xFF;
 	OneTime[0].cdat[7] = 0xFF;
 	OneTime[1].cdat[0] = 0;		// values (ORed)
 	OneTime[1].cdat[1] = 0;
 	OneTime[1].cdat[2] = 0;
 	OneTime[1].cdat[3] = 0;
-	OneTime[1].cdat[4] = 0;
-	OneTime[1].cdat[5] = 0x80;
+	OneTime[1].cdat[4] = 0x01;
+	OneTime[1].cdat[5] = 0;
 	OneTime[1].cdat[6] = 0;
 	OneTime[1].cdat[7] = 0;
 //U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(18,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
+	SimpleButtonConfig(8,0,0x22D,OneTime[0].cdat,OneTime[1].cdat,1);
 
-	// Preset
+	// Seek Up
+	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
+	OneTime[0].cdat[1] = 0xFF;
+	OneTime[0].cdat[2] = 0;		// using OneTime structure as temp storage
+	OneTime[0].cdat[3] = 0xFF;
+	OneTime[0].cdat[4] = 0xFF;
+	OneTime[0].cdat[5] = 0xFF;		
+	OneTime[0].cdat[6] = 0xFF;
+	OneTime[0].cdat[7] = 0xFF;
+	OneTime[1].cdat[0] = 0;		// values (ORed)
+	OneTime[1].cdat[1] = 0;
+	OneTime[1].cdat[2] = 0x40;
+	OneTime[1].cdat[3] = 0;
+	OneTime[1].cdat[4] = 0;
+	OneTime[1].cdat[5] = 0;
+	OneTime[1].cdat[6] = 0;
+	OneTime[1].cdat[7] = 0;
+//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
+	SimpleButtonConfig(17,0,0x22D,OneTime[0].cdat,OneTime[1].cdat,1);
+
+	// Seek Down
 	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
 	OneTime[0].cdat[1] = 0xFF;
 	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
@@ -1565,58 +1605,58 @@ void User2()	// program select 2, PNET
 	OneTime[1].cdat[0] = 0;		// values (ORed)
 	OneTime[1].cdat[1] = 0;
 	OneTime[1].cdat[2] = 0;
-	OneTime[1].cdat[3] = 0x08;
+	OneTime[1].cdat[3] = 0x01;
 	OneTime[1].cdat[4] = 0;
 	OneTime[1].cdat[5] = 0;
 	OneTime[1].cdat[6] = 0;
 	OneTime[1].cdat[7] = 0;
 //U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(8,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
-
-	// Seek Up
-	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
-	OneTime[0].cdat[1] = 0xFF;
-	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
-	OneTime[0].cdat[3] = 0xFF;
-	OneTime[0].cdat[4] = 0;
-	OneTime[0].cdat[5] = 0xFF;		
-	OneTime[0].cdat[6] = 0xFF;
-	OneTime[0].cdat[7] = 0xFF;
-	OneTime[1].cdat[0] = 0;		// values (ORed)
-	OneTime[1].cdat[1] = 0;
-	OneTime[1].cdat[2] = 0;
-	OneTime[1].cdat[3] = 0;
-	OneTime[1].cdat[4] = 0x02;
-	OneTime[1].cdat[5] = 0;
-	OneTime[1].cdat[6] = 0;
-	OneTime[1].cdat[7] = 0;
-//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(17,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
-
-	// Seek Down
-	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
-	OneTime[0].cdat[1] = 0xFF;
-	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
-	OneTime[0].cdat[3] = 0xFF;
-	OneTime[0].cdat[4] = 0;
-	OneTime[0].cdat[5] = 0xFF;		
-	OneTime[0].cdat[6] = 0xFF;
-	OneTime[0].cdat[7] = 0xFF;
-	OneTime[1].cdat[0] = 0;		// values (ORed)
-	OneTime[1].cdat[1] = 0;
-	OneTime[1].cdat[2] = 0;
-	OneTime[1].cdat[3] = 0;
-	OneTime[1].cdat[4] = 0x08;
-	OneTime[1].cdat[5] = 0;
-	OneTime[1].cdat[6] = 0;
-	OneTime[1].cdat[7] = 0;
-//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(7,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
+	SimpleButtonConfig(7,0,0x22D,OneTime[0].cdat,OneTime[1].cdat,1);
 
 	// Phone Pickup
 	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
 	OneTime[0].cdat[1] = 0xFF;
 	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
+	OneTime[0].cdat[3] = 0;
+	OneTime[0].cdat[4] = 0xFF;
+	OneTime[0].cdat[5] = 0xFF;		
+	OneTime[0].cdat[6] = 0xFF;
+	OneTime[0].cdat[7] = 0xFF;
+	OneTime[1].cdat[0] = 0;		// values (ORed)
+	OneTime[1].cdat[1] = 0;
+	OneTime[1].cdat[2] = 0;
+	OneTime[1].cdat[3] = 0x10;
+	OneTime[1].cdat[4] = 0;
+	OneTime[1].cdat[5] = 0;
+	OneTime[1].cdat[6] = 0;
+	OneTime[1].cdat[7] = 0;
+//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
+	SimpleButtonConfig(16,0,0x22D,OneTime[0].cdat,OneTime[1].cdat,1);
+
+	// Phone Hangup
+	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
+	OneTime[0].cdat[1] = 0xFF;
+	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
+	OneTime[0].cdat[3] = 0;
+	OneTime[0].cdat[4] = 0xFF;
+	OneTime[0].cdat[5] = 0xFF;		
+	OneTime[0].cdat[6] = 0xFF;
+	OneTime[0].cdat[7] = 0xFF;
+	OneTime[1].cdat[0] = 0;		// values (ORed)
+	OneTime[1].cdat[1] = 0;
+	OneTime[1].cdat[2] = 0;
+	OneTime[1].cdat[3] = 0x40;
+	OneTime[1].cdat[4] = 0;
+	OneTime[1].cdat[5] = 0;
+	OneTime[1].cdat[6] = 0;
+	OneTime[1].cdat[7] = 0;
+//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
+	SimpleButtonConfig(6,0,0x22D,OneTime[0].cdat,OneTime[1].cdat,1);
+
+	// VR
+	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
+	OneTime[0].cdat[1] = 0xFF;
+	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
 	OneTime[0].cdat[3] = 0xFF;
 	OneTime[0].cdat[4] = 0;
 	OneTime[0].cdat[5] = 0xFF;		
@@ -1626,14 +1666,54 @@ void User2()	// program select 2, PNET
 	OneTime[1].cdat[1] = 0;
 	OneTime[1].cdat[2] = 0;
 	OneTime[1].cdat[3] = 0;
-	OneTime[1].cdat[4] = 0x80;
+	OneTime[1].cdat[4] = 0x04;
 	OneTime[1].cdat[5] = 0;
 	OneTime[1].cdat[6] = 0;
 	OneTime[1].cdat[7] = 0;
 //U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(16,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
+	SimpleButtonConfig(15,0,0x22D,OneTime[0].cdat,OneTime[1].cdat,1);
 
-	// Phone Hangup
+	// Screen Off
+	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
+	OneTime[0].cdat[1] = 0xFF;
+	OneTime[0].cdat[2] = 0;	// using OneTime structure as temp storage
+	OneTime[0].cdat[3] = 0xFF;
+	OneTime[0].cdat[4] = 0xFF;
+	OneTime[0].cdat[5] = 0xFF;		
+	OneTime[0].cdat[6] = 0xFF;
+	OneTime[0].cdat[7] = 0xFF;
+	OneTime[1].cdat[0] = 0;		// values (ORed)
+	OneTime[1].cdat[1] = 0;
+	OneTime[1].cdat[2] = 0x20;
+	OneTime[1].cdat[3] = 0;
+	OneTime[1].cdat[4] = 0;
+	OneTime[1].cdat[5] = 0;
+	OneTime[1].cdat[6] = 0;
+	OneTime[1].cdat[7] = 0;
+//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
+	SimpleButtonConfig(5,0,0x2D3,OneTime[0].cdat,OneTime[1].cdat,1);
+
+	// Mute
+	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
+	OneTime[0].cdat[1] = 0xFF;
+	OneTime[0].cdat[2] = 0;	// using OneTime structure as temp storage
+	OneTime[0].cdat[3] = 0xFF;
+	OneTime[0].cdat[4] = 0xFF;
+	OneTime[0].cdat[5] = 0xFF;		
+	OneTime[0].cdat[6] = 0xFF;
+	OneTime[0].cdat[7] = 0xFF;
+	OneTime[1].cdat[0] = 0;		// values (ORed)
+	OneTime[1].cdat[1] = 0;
+	OneTime[1].cdat[2] = 0x01;
+	OneTime[1].cdat[3] = 0;
+	OneTime[1].cdat[4] = 0;
+	OneTime[1].cdat[5] = 0;
+	OneTime[1].cdat[6] = 0;
+	OneTime[1].cdat[7] = 0;
+//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
+	SimpleButtonConfig(14,0,0x2D3,OneTime[0].cdat,OneTime[1].cdat,1);
+
+	// Back
 	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
 	OneTime[0].cdat[1] = 0xFF;
 	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
@@ -1651,29 +1731,91 @@ void User2()	// program select 2, PNET
 	OneTime[1].cdat[6] = 0;
 	OneTime[1].cdat[7] = 0;
 //U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(6,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
+	SimpleButtonConfig(4,0,0x2D3,OneTime[0].cdat,OneTime[1].cdat,1);
 
-	// VR
+	// Browse/Enter
 	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
 	OneTime[0].cdat[1] = 0xFF;
-	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
-	OneTime[0].cdat[3] = 0;
+	OneTime[0].cdat[2] = 0;	// using OneTime structure as temp storage
+	OneTime[0].cdat[3] = 0xFF;
 	OneTime[0].cdat[4] = 0xFF;
 	OneTime[0].cdat[5] = 0xFF;		
 	OneTime[0].cdat[6] = 0xFF;
 	OneTime[0].cdat[7] = 0xFF;
 	OneTime[1].cdat[0] = 0;		// values (ORed)
 	OneTime[1].cdat[1] = 0;
-	OneTime[1].cdat[2] = 0;
-	OneTime[1].cdat[3] = 0x20;
+	OneTime[1].cdat[2] = 0x02;
+	OneTime[1].cdat[3] = 0;
 	OneTime[1].cdat[4] = 0;
 	OneTime[1].cdat[5] = 0;
 	OneTime[1].cdat[6] = 0;
 	OneTime[1].cdat[7] = 0;
 //U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(15,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
+	SimpleButtonConfig(13,0,0x2D3,OneTime[0].cdat,OneTime[1].cdat,1);
 
-	// Screen Off
+	// Screenshot
+	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
+	OneTime[0].cdat[1] = 0xFF;
+	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
+	OneTime[0].cdat[3] = 0xFF;
+	OneTime[0].cdat[4] = 0xFF;
+	OneTime[0].cdat[5] = 0;		
+	OneTime[0].cdat[6] = 0xFF;
+	OneTime[0].cdat[7] = 0xFF;
+	OneTime[1].cdat[0] = 0;		// values (ORed)
+	OneTime[1].cdat[1] = 0;
+	OneTime[1].cdat[2] = 0;
+	OneTime[1].cdat[3] = 0;
+	OneTime[1].cdat[4] = 0;
+	OneTime[1].cdat[5] = 0x4C;
+	OneTime[1].cdat[6] = 0;
+	OneTime[1].cdat[7] = 0;
+//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
+	SimpleButtonConfig(3,0,0x2D3,OneTime[0].cdat,OneTime[1].cdat,5);
+
+
+	// ENG. Mode
+	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
+	OneTime[0].cdat[1] = 0xFF;
+	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
+	OneTime[0].cdat[3] = 0xFF;
+	OneTime[0].cdat[4] = 0xFF;
+	OneTime[0].cdat[5] = 0;		
+	OneTime[0].cdat[6] = 0xFF;
+	OneTime[0].cdat[7] = 0xFF;
+	OneTime[1].cdat[0] = 0;		// values (ORed)
+	OneTime[1].cdat[1] = 0;
+	OneTime[1].cdat[2] = 0;
+	OneTime[1].cdat[3] = 0;
+	OneTime[1].cdat[4] = 0;
+	OneTime[1].cdat[5] = 0x0C;
+	OneTime[1].cdat[6] = 0;
+	OneTime[1].cdat[7] = 0;
+//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
+	SimpleButtonConfig(12,0,0x2D3,OneTime[0].cdat,OneTime[1].cdat,5);
+
+	// Dealer Mode
+	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
+	OneTime[0].cdat[1] = 0xFF;
+	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
+	OneTime[0].cdat[3] = 0xFF;
+	OneTime[0].cdat[4] = 0xFF;
+	OneTime[0].cdat[5] = 0;		
+	OneTime[0].cdat[6] = 0xFF;
+	OneTime[0].cdat[7] = 0xFF;
+	OneTime[1].cdat[0] = 0;		// values (ORed)
+	OneTime[1].cdat[1] = 0;
+	OneTime[1].cdat[2] = 0;
+	OneTime[1].cdat[3] = 0;
+	OneTime[1].cdat[4] = 0;
+	OneTime[1].cdat[5] = 0x8C;
+	OneTime[1].cdat[6] = 0;
+	OneTime[1].cdat[7] = 0;
+//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
+	SimpleButtonConfig(2,0,0x2D3,OneTime[0].cdat,OneTime[1].cdat,5);
+
+
+	// Night Mode
 	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
 	OneTime[0].cdat[1] = 0;
 	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
@@ -1683,7 +1825,7 @@ void User2()	// program select 2, PNET
 	OneTime[0].cdat[6] = 0xFF;
 	OneTime[0].cdat[7] = 0xFF;
 	OneTime[1].cdat[0] = 0;		// values (ORed)
-	OneTime[1].cdat[1] = 0x10;
+	OneTime[1].cdat[1] = 0x00;
 	OneTime[1].cdat[2] = 0;
 	OneTime[1].cdat[3] = 0;
 	OneTime[1].cdat[4] = 0;
@@ -1691,29 +1833,9 @@ void User2()	// program select 2, PNET
 	OneTime[1].cdat[6] = 0;
 	OneTime[1].cdat[7] = 0;
 //U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(5,0,0x5E2,OneTime[0].cdat,OneTime[1].cdat,1);
+	SimpleButtonConfig(11,0,0x2FA,OneTime[0].cdat,OneTime[1].cdat,1); 
 
-	// Radio Off
-	OneTime[0].cdat[0] = 0;	// mask bits (ANDed)
-	OneTime[0].cdat[1] = 0xFF;
-	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
-	OneTime[0].cdat[3] = 0xFF;
-	OneTime[0].cdat[4] = 0xFF;
-	OneTime[0].cdat[5] = 0xFF;		
-	OneTime[0].cdat[6] = 0xFF;
-	OneTime[0].cdat[7] = 0x00;
-	OneTime[1].cdat[0] = 0xFF;		// values (ORed)
-	OneTime[1].cdat[1] = 0;
-	OneTime[1].cdat[2] = 0;
-	OneTime[1].cdat[3] = 0;
-	OneTime[1].cdat[4] = 0;
-	OneTime[1].cdat[5] = 0;
-	OneTime[1].cdat[6] = 0x80;
-	OneTime[1].cdat[7] = 0;
-//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(14,0,0x2D3,OneTime[0].cdat,OneTime[1].cdat,1);
-
-	// Back
+	// Day Mode
 	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
 	OneTime[0].cdat[1] = 0;
 	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
@@ -1731,129 +1853,8 @@ void User2()	// program select 2, PNET
 	OneTime[1].cdat[6] = 0;
 	OneTime[1].cdat[7] = 0;
 //U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(4,0,0x5E2,OneTime[0].cdat,OneTime[1].cdat,1);
-
-	// Browse/Enter
-	OneTime[0].cdat[0] = 0;	// mask bits (ANDed)
-	OneTime[0].cdat[1] = 0xFF;
-	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
-	OneTime[0].cdat[3] = 0xFF;
-	OneTime[0].cdat[4] = 0xFF;
-	OneTime[0].cdat[5] = 0xFF;		
-	OneTime[0].cdat[6] = 0xFF;
-	OneTime[0].cdat[7] = 0xFF;
-	OneTime[1].cdat[0] = 0x01;		// values (ORed)
-	OneTime[1].cdat[1] = 0;
-	OneTime[1].cdat[2] = 0;
-	OneTime[1].cdat[3] = 0;
-	OneTime[1].cdat[4] = 0;
-	OneTime[1].cdat[5] = 0;
-	OneTime[1].cdat[6] = 0;
-	OneTime[1].cdat[7] = 0;
-//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(13,0,0x5E2,OneTime[0].cdat,OneTime[1].cdat,1);
+	SimpleButtonConfig(1,0,0x2FA,OneTime[0].cdat,OneTime[1].cdat,1);
 /*
-	// Screenshot
-	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
-	OneTime[0].cdat[1] = 0xFF;
-	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
-	OneTime[0].cdat[3] = 0xFF;
-	OneTime[0].cdat[4] = 0;
-	OneTime[0].cdat[5] = 0xFF;		
-	OneTime[0].cdat[6] = 0xFF;
-	OneTime[0].cdat[7] = 0xFF;
-	OneTime[1].cdat[0] = 0;		// values (ORed)
-	OneTime[1].cdat[1] = 0;
-	OneTime[1].cdat[2] = 0;
-	OneTime[1].cdat[3] = 0;
-	OneTime[1].cdat[4] = 0x80;
-	OneTime[1].cdat[5] = 0;
-	OneTime[1].cdat[6] = 0;
-	OneTime[1].cdat[7] = 0;
-//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(3,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
-
-*/
-	// ENG. Mode
-	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
-	OneTime[0].cdat[1] = 0xFF;
-	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
-	OneTime[0].cdat[3] = 0xFF;
-	OneTime[0].cdat[4] = 0;
-	OneTime[0].cdat[5] = 0xFF;		
-	OneTime[0].cdat[6] = 0xFF;
-	OneTime[0].cdat[7] = 0xFF;
-	OneTime[1].cdat[0] = 0;		// values (ORed)
-	OneTime[1].cdat[1] = 0;
-	OneTime[1].cdat[2] = 0;
-	OneTime[1].cdat[3] = 0;
-	OneTime[1].cdat[4] = 0xC0;
-	OneTime[1].cdat[5] = 0;
-	OneTime[1].cdat[6] = 0;
-	OneTime[1].cdat[7] = 0;
-//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(12,0,0x5E2,OneTime[0].cdat,OneTime[1].cdat,12);
-/*
-	// Dealer Mode
-	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
-	OneTime[0].cdat[1] = 0xFF;
-	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
-	OneTime[0].cdat[3] = 0xFF;
-	OneTime[0].cdat[4] = 0;
-	OneTime[0].cdat[5] = 0xFF;		
-	OneTime[0].cdat[6] = 0xFF;
-	OneTime[0].cdat[7] = 0xFF;
-	OneTime[1].cdat[0] = 0;		// values (ORed)
-	OneTime[1].cdat[1] = 0;
-	OneTime[1].cdat[2] = 0;
-	OneTime[1].cdat[3] = 0;
-	OneTime[1].cdat[4] = 0x80;
-	OneTime[1].cdat[5] = 0;
-	OneTime[1].cdat[6] = 0;
-	OneTime[1].cdat[7] = 0;
-//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(2,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
-
-	// 911
-	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
-	OneTime[0].cdat[1] = 0xFF;
-	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
-	OneTime[0].cdat[3] = 0xFF;
-	OneTime[0].cdat[4] = 0;
-	OneTime[0].cdat[5] = 0xFF;		
-	OneTime[0].cdat[6] = 0xFF;
-	OneTime[0].cdat[7] = 0xFF;
-	OneTime[1].cdat[0] = 0;		// values (ORed)
-	OneTime[1].cdat[1] = 0;
-	OneTime[1].cdat[2] = 0;
-	OneTime[1].cdat[3] = 0;
-	OneTime[1].cdat[4] = 0x80;
-	OneTime[1].cdat[5] = 0;
-	OneTime[1].cdat[6] = 0;
-	OneTime[1].cdat[7] = 0;
-//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(11,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
-
-	// Assist
-	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
-	OneTime[0].cdat[1] = 0xFF;
-	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
-	OneTime[0].cdat[3] = 0xFF;
-	OneTime[0].cdat[4] = 0;
-	OneTime[0].cdat[5] = 0xFF;		
-	OneTime[0].cdat[6] = 0xFF;
-	OneTime[0].cdat[7] = 0xFF;
-	OneTime[1].cdat[0] = 0;		// values (ORed)
-	OneTime[1].cdat[1] = 0;
-	OneTime[1].cdat[2] = 0;
-	OneTime[1].cdat[3] = 0;
-	OneTime[1].cdat[4] = 0x80;
-	OneTime[1].cdat[5] = 0;
-	OneTime[1].cdat[6] = 0;
-	OneTime[1].cdat[7] = 0;
-//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(1,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
-
 	// Door Ajar
 	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
 	OneTime[0].cdat[1] = 0xFF;
@@ -1872,7 +1873,7 @@ void User2()	// program select 2, PNET
 	OneTime[1].cdat[6] = 0;
 	OneTime[1].cdat[7] = 0;
 //U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(10,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
+	SimpleButtonConfig(10,0,0x22D,OneTime[0].cdat,OneTime[1].cdat,1);
 
 	// Theft Alarm
 	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
@@ -1892,8 +1893,48 @@ void User2()	// program select 2, PNET
 	OneTime[1].cdat[6] = 0;
 	OneTime[1].cdat[7] = 0;
 //U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
-	SimpleButtonConfig(,0,0x4A3,OneTime[0].cdat,OneTime[1].cdat,1);
+	SimpleButtonConfig(,0,0x22D,OneTime[0].cdat,OneTime[1].cdat,1);
 */
+
+// Phone Pickup Long Press
+	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
+	OneTime[0].cdat[1] = 0xFF;
+	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
+	OneTime[0].cdat[3] = 0;
+	OneTime[0].cdat[4] = 0xFF;
+	OneTime[0].cdat[5] = 0xFF;		
+	OneTime[0].cdat[6] = 0xFF;
+	OneTime[0].cdat[7] = 0xFF;
+	OneTime[1].cdat[0] = 0;		// values (ORed)
+	OneTime[1].cdat[1] = 0;
+	OneTime[1].cdat[2] = 0;
+	OneTime[1].cdat[3] = 0x10;
+	OneTime[1].cdat[4] = 0;
+	OneTime[1].cdat[5] = 0;
+	OneTime[1].cdat[6] = 0;
+	OneTime[1].cdat[7] = 0;
+//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
+	SimpleButtonConfig(10,0,0x22D,OneTime[0].cdat,OneTime[1].cdat,3);
+
+// VR Long Press
+	OneTime[0].cdat[0] = 0xFF;	// mask bits (ANDed)
+	OneTime[0].cdat[1] = 0xFF;
+	OneTime[0].cdat[2] = 0xFF;	// using OneTime structure as temp storage
+	OneTime[0].cdat[3] = 0xFF;
+	OneTime[0].cdat[4] = 0;
+	OneTime[0].cdat[5] = 0xFF;		
+	OneTime[0].cdat[6] = 0xFF;
+	OneTime[0].cdat[7] = 0xFF;
+	OneTime[1].cdat[0] = 0;		// values (ORed)
+	OneTime[1].cdat[1] = 0;
+	OneTime[1].cdat[2] = 0;
+	OneTime[1].cdat[3] = 0;
+	OneTime[1].cdat[4] = 0x04;
+	OneTime[1].cdat[5] = 0;
+	OneTime[1].cdat[6] = 0;
+	OneTime[1].cdat[7] = 0;
+//U8 SimpleButtonConfig(U8 button,U8 port,U32 ID,U8 mask[8],U8 value[8],count);
+	SimpleButtonConfig(0,0,0x22D,OneTime[0].cdat,OneTime[1].cdat,3);
 
 
 
@@ -2345,7 +2386,22 @@ void User2()	// program select 2, PNET
 						AlterMessageByte(0,0x322,2,OneTime[index1].cdat,8,0);
 						IGN_OFF_FLG = 1;
 						break;
-					case 0x30:	// IGN_RUN_0
+
+					case 0x30:	// IGN_START
+						// ID 190, alter byte 0,1 
+						OneTime[index1].cdat[0] = 0x05;	      	//ignition run, start not active  04 = run ;02=ACC ;0D= NormalStart, key in Ign, 						
+						OneTime[index1].cdat[1] = 0x02;		  	//key in ignition
+						AlterMessageByte(0,0x122,0,OneTime[index1].cdat,2,0);
+
+						// ID 98, alter bytes 2,3  
+						OneTime[index1].cdat[0] = 0x0; 			// 0 speed			
+						OneTime[index1].cdat[1] = 0x0;
+						OneTime[index1].cdat[2] = 0x0;
+						OneTime[index1].cdat[3] = 0x0;
+						AlterMessageByte(0,0x322,2,OneTime[index1].cdat,4,0);
+						IGN_OFF_FLG = 1;
+						break;
+					case 0x40:	// IGN_RUN_0
 						// ID 190, alter byte 0,1 
 						OneTime[index1].cdat[0] = 0x04;	      	//ignition run, start not active  04 = run ;02=ACC ;0D= NormalStart, key in Ign, 						
 						OneTime[index1].cdat[1] = 0x02;		  	//key in ignition
@@ -2363,7 +2419,7 @@ void User2()	// program select 2, PNET
 						AlterMessageByte(0,0x322,2,OneTime[index1].cdat,8,0);
 						IGN_OFF_FLG = 1;
 						break;
-					case 0x40:	// IGN_RUN_5
+					case 0x50:	// IGN_RUN_5
 					// ID 190, alter byte 0,1 
 						OneTime[index1].cdat[0] = 0x04;	      	//ignition run, start not active  04 = run ;02=ACC ;0D= NormalStart, key in Ign, 						
 						OneTime[index1].cdat[1] = 0x02;		  	//key in ignition
@@ -2381,7 +2437,7 @@ void User2()	// program select 2, PNET
 						AlterMessageByte(0,0x322,2,OneTime[index1].cdat,8,0);
 						IGN_OFF_FLG = 1;
 						break;
-					case 0x50:	// IGN_RUN_10
+					case 0x60:	// IGN_RUN_10
 					// ID 190, alter byte 0,1 
 						OneTime[index1].cdat[0] = 0x04;	      	//ignition run, start not active  04 = run ;02=ACC ;0D= NormalStart, key in Ign, 						
 						OneTime[index1].cdat[1] = 0x02;		  	//key in ignition
@@ -2399,20 +2455,7 @@ void User2()	// program select 2, PNET
 						AlterMessageByte(0,0x322,2,OneTime[index1].cdat,8,0);
 						IGN_OFF_FLG = 1;
 						break;
-					case 0x60:	// IGN_START
-						// ID 190, alter byte 0,1 
-						OneTime[index1].cdat[0] = 0x05;	      	//ignition run, start not active  04 = run ;02=ACC ;0D= NormalStart, key in Ign, 						
-						OneTime[index1].cdat[1] = 0x02;		  	//key in ignition
-						AlterMessageByte(0,0x122,0,OneTime[index1].cdat,2,0);
-
-						// ID 98, alter bytes 2,3  
-						OneTime[index1].cdat[0] = 0x0; 			// 0 speed			
-						OneTime[index1].cdat[1] = 0x0;
-						OneTime[index1].cdat[2] = 0x0;
-						OneTime[index1].cdat[3] = 0x0;
-						AlterMessageByte(0,0x322,2,OneTime[index1].cdat,4,0);
-						IGN_OFF_FLG = 1;
-						break;
+					
 					case 0x70:
 						break;
 					case 0x80:
