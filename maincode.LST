@@ -1,4 +1,4 @@
-C51 COMPILER V9.51   MAINCODE                                                              06/01/2016 09:49:50 PAGE 1   
+C51 COMPILER V9.51   MAINCODE                                                              06/02/2016 08:16:06 PAGE 1   
 
 
 C51 COMPILER V9.51, COMPILATION OF MODULE MAINCODE
@@ -62,7 +62,7 @@ line level    source
   53   1              CAN0CN  = 0x0A; // Enables Int's, Error and IE (rx or tx)
   54   1              //=====================================================================
   55   1      
-C51 COMPILER V9.51   MAINCODE                                                              06/01/2016 09:49:50 PAGE 2   
+C51 COMPILER V9.51   MAINCODE                                                              06/02/2016 08:16:06 PAGE 2   
 
   56   1              ClearUserVars();
   57   1              //======================================================
@@ -126,7 +126,7 @@ line level    source
  115   2                      Mesgs = (MSGTABLE xdata *)(FirstAddress + sizeof(BUTTABLE)*Bcnt);
  116   2                      RxMesg = (RxMESG xdata *)(FirstAddress + sizeof(BUTTABLE)*Bcnt+Mcnt*sizeof(MSGTABLE));
  117   2                      return(1);
-C51 COMPILER V9.51   MAINCODE                                                              06/01/2016 09:49:50 PAGE 3   
+C51 COMPILER V9.51   MAINCODE                                                              06/02/2016 08:16:06 PAGE 3   
 
  118   2              }
  119   1              else
@@ -190,7 +190,7 @@ line level    source
  177   1              SFRPAGE  = SFRPAGE_SAVE;
  178   1      }
  179          
-C51 COMPILER V9.51   MAINCODE                                                              06/01/2016 09:49:50 PAGE 4   
+C51 COMPILER V9.51   MAINCODE                                                              06/02/2016 08:16:06 PAGE 4   
 
  180          void CheckRelay()
  181          {
@@ -254,7 +254,7 @@ line level    source
  239   4                                              value[x] = ((Mesgs+j)->dat[x] & (Buttons+i)->mask[x]) | (Buttons+i)->value[x];
  240   4                                      AlterMessageByte(0,(Mesgs+j)->ID,0,value,x,(Buttons+i)->cnt);
  241   4                              }               
-C51 COMPILER V9.51   MAINCODE                                                              06/01/2016 09:49:50 PAGE 5   
+C51 COMPILER V9.51   MAINCODE                                                              06/02/2016 08:16:06 PAGE 5   
 
  242   3                              else                                            // button released
  243   3                              {                                                       // check if held data then restore
@@ -318,7 +318,7 @@ line level    source
  301   3                              {
  302   4                                      // re-index to next matching RxMesg
  303   4                                      for (i++ ; i < RxCnt && (RxMesg+i)->RxNum != RxMsg ; i++);
-C51 COMPILER V9.51   MAINCODE                                                              06/01/2016 09:49:50 PAGE 6   
+C51 COMPILER V9.51   MAINCODE                                                              06/02/2016 08:16:06 PAGE 6   
 
  304   4                                      if (i < RxCnt) test = 1;        
  305   4                              }
@@ -382,7 +382,7 @@ line level    source
  363   2              }
  364   1              (Mesgs+MesgCnt)->Altered = 0;   // non altered data
  365   1      
-C51 COMPILER V9.51   MAINCODE                                                              06/01/2016 09:49:50 PAGE 7   
+C51 COMPILER V9.51   MAINCODE                                                              06/02/2016 08:16:06 PAGE 7   
 
  366   1              if (MesgCnt < MaxMesgs)
  367   1                      MesgCnt++;
@@ -446,7 +446,7 @@ line level    source
  425   1      }
  426          
  427          // Used to configure the recieve side of a RxMessage filter/trap
-C51 COMPILER V9.51   MAINCODE                                                              06/01/2016 09:49:50 PAGE 8   
+C51 COMPILER V9.51   MAINCODE                                                              06/02/2016 08:16:06 PAGE 8   
 
  428          // port - 0 or 1
  429          // ID is ID
@@ -510,7 +510,7 @@ line level    source
  487   2                      case 1:
  488   2                              if (type > 1)
  489   2                                      RELAY1 ^= 1;
-C51 COMPILER V9.51   MAINCODE                                                              06/01/2016 09:49:50 PAGE 9   
+C51 COMPILER V9.51   MAINCODE                                                              06/02/2016 08:16:06 PAGE 9   
 
  490   2                              else
  491   2                                      RELAY1 = type;

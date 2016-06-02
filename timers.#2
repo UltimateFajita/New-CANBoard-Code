@@ -14,8 +14,6 @@ extern U8 xdata MesgCnt;
 extern CANFRAME xdata txframe;
 extern CANFRAME xdata OneTime[3];
 
-bit IGN_OFF_FLG;
-
 void Oscillator_Init(void)
 {
 	char	SFPRPAGE_SAVE = SFRPAGE;	// Save Current SFR Page
@@ -214,12 +212,8 @@ void CheckMesgs()
 			for (j = 0 ; j < txframe.sz ; j++)
 				txframe.cdat[j] = (Mesgs+i)->dat[j];
 
-			/////////////////////////////////////////////////////////////////////////////////////////////////////
-			if (IGN_OFF_FLG)
-			{
-				TxFrame(port);
-				found = 1;
-			}
+			TxFrame(port);
+			found = 1;
 
 			if ((Mesgs+i)->Altered)
 			{
